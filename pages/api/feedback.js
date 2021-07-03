@@ -1,4 +1,8 @@
-import { buildFeedbackPath, extractFeedback } from '../../helpers/feedback';
+import {
+  buildFeedbackPath,
+  extractFeedback,
+  storeFeedback,
+} from '../../helpers/feedback';
 
 export default function handler(req, res) {
   if (req.method === 'POST') {
@@ -14,7 +18,7 @@ export default function handler(req, res) {
     const filePath = buildFeedbackPath();
     const data = extractFeedback(filePath);
     data.push(newFeedback);
-    fs.writeFileSync(filePath, JSON.stringify(data));
+    storeFeedback(filePath, data);
 
     res.status(201).json({ message: 'Success', feedback: newFeedback });
   } else {

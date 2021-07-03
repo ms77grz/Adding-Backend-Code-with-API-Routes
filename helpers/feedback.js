@@ -10,3 +10,7 @@ export function extractFeedback(filePath) {
   const data = JSON.parse(fileData);
   return data;
 }
+
+export function storeFeedback(filePath, data) {
+  fs.writeFileSync(filePath, JSON.stringify(data));
+}
