@@ -1,4 +1,4 @@
-import { buildFeedbackPath, extractFeedback } from '../../helpers/feedback';
+import { buildFeedbackPath, extractFeedback } from '../../../helpers/feedback';
 
 export default function handler(req, res) {
   const id = req.query.id;

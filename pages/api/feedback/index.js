@@ -2,7 +2,7 @@ import {
   buildFeedbackPath,
   extractFeedback,
   storeFeedback,
-} from '../../helpers/feedback';
+} from '../../../helpers/feedback';
 
 export default function handler(req, res) {
   if (req.method === 'POST') {
